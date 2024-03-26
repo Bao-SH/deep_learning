@@ -117,7 +117,7 @@ class Animator:
 
 # 定义运行多个周期的训练函数
 def train_ch3(net, train_iter, test_iter, loss, num_epochs, updater):
-    animator = Animator(xlabel='epoch', xlim=[1, num_epochs], ylim=[0.3, 0.9],
+    animator = Animator(xlabel='epoch', xlim=[1, num_epochs], ylim=[0.0, 0.9],
                         legend=['train loss', 'train acc', 'test acc'])
     for epoch in range(num_epochs):
         train_metrics = train_epoch_ch3(net, train_iter, loss, updater)
@@ -139,4 +139,4 @@ def updater(batch_size):
 # 执行计划
 num_epochs = 10
 train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
-d2l.plt.show()  # 不显示图像 不知道为什么
+d2l.plt.show()
